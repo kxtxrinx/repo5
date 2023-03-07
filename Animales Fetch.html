@@ -5,75 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+<style>
 </head>
 <body>
     <p> this is a test </p>
-    <br><br><br><br>
-    <h2>Ejemplo JSON + AJAX (Animales)</h2>
-    <input type="button" value="Lee animales" id="botonAnimal" onclick="addAnimal()">
-
+	<h2> Test </h2>
+    
     <div id="zona">
     </div>
 
-    <script>
-      var contador = 1
-      var xhttp = new XMLHttpRequest()
-      var salida =""
-
-      
-      function addAnimal(){
-        fetch(`http://10.190.2.194:5501/Server/json/animales${contador}.json`)
-            .then(response => response.json())
-            .then(data=> {
-                console.log("a")
-                //escribeAnimales(data.)
-                //contador++
-                console.log(data.name)
-            })
-            .catch(err => console.log(err))
-        }
-
-        function escribeAnimales(){
-            for(var i=0;i<respuestaObjeto.animales.length;i++){
-                    salida += `${respuestaObjeto.animales[i].name} es un ${respuestaObjeto.animales[i].species} que le gusta`
-                    for(var j=0;j<respuestaObjeto.animales[i].foods.likes.length;j++){
-                        salida+= `${respuestaObjeto.animales[i].foods.likes[j]} y `
-                    }
-                salida += 'no le gusta '
-                    for(var j=0;j<respuestaObjeto.animales[i].foods.dislikes.length;j++){
-                        salida+= `${respuestaObjeto.animales[i].foods.dislikes[j]}, `
-                    }
-                }
-            document.getElementById('zona').innerHTML = salida
-        }
-
-/*
-        xhttp.onreadystatechange = function(){
-            if(this.readyState == 4 && this.status == 200){
-                var respuestaTexto = xhttp.responseText
-                var respuestaObjeto = JSON.parse(xhttp.responseText)
-
-                console.log(respuestaObjeto)
-
-                for(var i=0;i<respuestaObjeto.animales.length;i++){
-                    salida += `${respuestaObjeto.animales[i].name} es un ${respuestaObjeto.animales[i].species} que le gusta`
-                    for(var j=0;j<respuestaObjeto.animales[i].foods.likes.length;j++){
-                        salida+= `${respuestaObjeto.animales[i].foods.likes[j]} y `
-                    }
-                salida += 'no le gusta '
-                    for(var j=0;j<respuestaObjeto.animales[i].foods.dislikes.length;j++){
-                        salida+= `${respuestaObjeto.animales[i].foods.dislikes[j]}, `
-                    }
-                }
-            document.getElementById('zona').innerHTML = salida
-            }
-        }
-        xhttp.open("GET", `http://10.190.2.194:5501/Server/json/animales${contador}.json`, true)
-        xhttp.send()
-        contador++
-        //meter xhttp dentro de addAnimal
-    }*/
-
-    </script>
 </body>
 </html>
