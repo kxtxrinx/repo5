@@ -1,0 +1,19 @@
+{
+	"animales": [{
+			"name": "maurfiiil",
+			"species": "gatote",
+			"foods": {
+				"likes": ["salmón", "pollo"],
+				"dislikes": ["pienso extraño"]
+			}
+		},
+		{
+			"name": "cris",
+			"species": "otro gatote",
+			"foods": {
+				"likes": ["literalmente todo"],
+				"dislikes": ["literalmente nada, se come todo lo que pille"]
+			}
+		}
+	]
+}

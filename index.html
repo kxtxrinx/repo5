@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="personas">
+
+    </div>
+    
+
+    <script>
+        var xhttp = new XMLHttpRequest()
+        xhttp.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                var respuestaTexto = xhttp.responseText
+                var respuestaObjeto = JSON.parse(xhttp.responseText)
+
+                console.log(respuestaObjeto)
+                var salida = ''
+                for(var i=0;i<respuestaObjeto.personas.length;i++){
+                    salida = `${respuestaObjeto.personas[i].nombre}, su nickname es ${respuestaObjeto.personas[i].nickname}<hr>`
+                    document.getElementById('personas').innerHTML += salida
+                }
+            }
+        }
+
+        xhttp.open("GET", "json/fichero2.json", true)
+        xhttp.send()
+    </script>
+    
+</body>
+</html>
